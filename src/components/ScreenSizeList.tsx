@@ -20,7 +20,7 @@ const windowInnerHeight = window.innerHeight*/
 /* Без полос прокуртки */
 /* const windowInnerWidth = document.documentElement.clientWidth
 const windowInnerHeight = document.documentElement.clientHeight */
-const [windowInnerSize, setWindowInnerSize] = useState([document.documentElement.clientWidth, document.documentElement.clientHeight])
+const [windowInnerSize, setWindowInnerSize] = useState([0, 0])
 /* Web page size */
 /* Если pageHeight больше, чем внутренняя высота окна, значит, присутствует вертикальная полоса прокрутки. */
 /* const pageWidth = document.documentElement.scrollWidth
@@ -30,12 +30,14 @@ const [webPageSize, setWebPageSize] = useState([0, 0])
 useEffect(()=>{
     setWindowScreenSize([window.screen.width, window.screen.height]);
     setWebPageSize([document.documentElement.scrollWidth, document.documentElement.scrollHeight])
+    setWindowInnerSize([document.documentElement.clientWidth, document.documentElement.clientHeight])
 })
 
   return (
     <>
       <h1>{windowScreenSize}</h1>
-      <h1>{webPageSize}</h1>
+      <h1>{`webPageSize width is ${webPageSize[0]}. webPageSize height is ${webPageSize[1]}`}</h1>
+      <h1>{`windowInnerSize width is ${windowInnerSize[0]}. windowInnerSize height is ${windowInnerSize[1]}`}</h1>
     </>
   )  
 }
