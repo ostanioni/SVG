@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 console.clear()
-console.log('dev-mode starting ...')
+console.log('\x1b[0m\x1b[42m\x1b[30m%s\x1b[0m', 'dev-mode starting ...');
 
 /*_____________CONTEXT_______________ */
 const CONTEXT = path.resolve(__dirname, '../')
